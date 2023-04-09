@@ -1,13 +1,25 @@
 const express = require('express');
-const things = require('./things.js')
+const thing = require('./things')
 
 const app = express();
+const port = 3005;
 
-//var things = require('./things.js');
 
 //both index.js and things.js should be in same directory
-app.use('/things', things);
+//app.set('/things', thing); //not working for some reason
 
-app.listen(3000, ()=>{
-    console.log("Server listening on 3000.");
+
+
+
+app.get('/:id/:name', (req, res)=>{
+    //res.send(req);
+    res.send(`Hello: ${req.params.id} : ${req.params.name}`)
+})
+
+app.get('*', (req, res)=>{
+    res.send('Sorry, this is an invalid URL.');
+ });
+
+app.listen(port, ()=>{
+    console.log(`Server listening on ${port}`);
 });
