@@ -1,4 +1,8 @@
 ### This module contains
 
 - starting up a basic express app
-- epress routes
+- express routes
+- Middleware
+- Templating engine (pug)
+- Static Files
+- Form Data
