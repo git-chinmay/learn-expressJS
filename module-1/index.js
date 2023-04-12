@@ -106,3 +106,9 @@ app.post('/', (req, res)=>{
 app.listen(port, ()=>{
     console.log(`Server listening on ${port}`);
 });
+
+/*
+The req.body object contains your parsed request body. 
+To use fields from that object, just use them like normal JS objects.
+This is the most recommended way to send a request. 
+*/
