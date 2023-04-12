@@ -53,17 +53,54 @@ const port = 3005;
 // Add templating engine in app
 // app.set('view engine', 'pug')
 // app.set('views', './views')
-app.set('view engine', 'hbs')
-app.set('views', './views')
+// app.set('view engine', 'hbs')
+// app.set('views', './views')
 
 
-/// SERVING STATIC FILES ///
+// /// SERVING STATIC FILES ///
+// app.use(express.static('./public'));
+
+
+// app.get("/", (req, res)=>{
+//     res.render('index')
+// })
+
+
+// app.listen(port, ()=>{
+//     console.log(`Server listening on ${port}`);
+// });
+
+
+
+/// FORM DATA ///
+const bodyParser = require('body-parser');
+const multer = require('multer');
+const upload = multer();
+
+
+app.set('view engine', 'hbs');
+app.set('views', './views');
+
+
+// for parsing application/json
+app.use(bodyParser.json()); 
+
+// for parsing application/xwww-urlencoded
+app.use(bodyParser.urlencoded({ extended: true })); 
+
+// for parsing multipart/form-data
+app.use(upload.array()); 
 app.use(express.static('./public'));
 
+app.get('/', (req, res)=>{
+   res.render('form');
+});
 
-app.get("/", (req, res)=>{
-    res.render('index')
-})
+app.post('/', (req, res)=>{
+    console.log(`req: ${req}`)
+   console.log(req.body);
+   res.send("recieved your request!");
+});
 
 
 app.listen(port, ()=>{
