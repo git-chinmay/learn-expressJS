@@ -1,6 +1,4 @@
 ### Topics covered
 
-- Error Handeling
-- Debugging
-- Best Practices
-- Resources
+- REST API
+- Scafolding
