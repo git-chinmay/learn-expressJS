@@ -1,0 +1,15 @@
+<html>
+   <head>
+      <title>Login</title>
+   </head>
+   <body>
+      {{#if message}}
+         <h4>{{message}}</h4>
+      {{/if}}
+      <form action="/login" method="POST">
+         <input name="id" type="text" required placeholder="User ID">
+         <input name="password" type="password" required placeholder="Password">
+         <button type="submit">Log in</button>
+      </form>
+   </body>
+</html>

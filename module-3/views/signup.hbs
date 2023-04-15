@@ -1,0 +1,15 @@
+<html>
+   <head>
+      <title>Signup</title>
+   </head>
+   <body>
+      {{#if message}}
+         <h4>{{message}}</h4>
+      {{/if}}
+      <form action="/signup" method="POST">
+         <input name="id" type="text" required placeholder="User ID">
+         <input name="password" type="password" required placeholder="Password">
+         <button type="submit">Sign me up!</button>
+      </form>
+   </body>
+</html>
