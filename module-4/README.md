@@ -1,4 +1,4 @@
 ### Topics covered
 
 - REST API
-- Scafolding
+- Scaffolding
